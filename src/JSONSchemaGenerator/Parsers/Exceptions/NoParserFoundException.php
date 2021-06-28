@@ -1,4 +1,5 @@
 <?php
+
 namespace JSONSchemaGenerator\Parsers\Exceptions;
 
 /**
@@ -6,8 +7,8 @@ namespace JSONSchemaGenerator\Parsers\Exceptions;
  */
 class NoParserFoundException extends \RuntimeException
 {
-    public function __construct($message = "Parser not found", $code = null, $previous = null)
-    {
-        parent::__construct($message, $code, $previous);
-    }
+  public function __construct($message = "Parser not found", $code = null, $previous = null)
+  {
+    parent::__construct($message, $code, $previous);
+  }
 }

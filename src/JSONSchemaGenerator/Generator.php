@@ -19,25 +19,28 @@ use JSONSchemaGenerator\Parsers\BaseParser;
  */
 abstract class Generator
 {
+  /**
+   * @param mixed $object
+   * @param array|null $config
+   *
+   * @return string
+   * @throws \JSONSchemaGenerator\Parsers\Exceptions\UnmappableException
+   */
+  public static function from($object, array $config = null): string
+  {
+    return (new BaseParser($config))->parse($object)->json();
+  }
 
-    /**
-     * @param mixed $object
-     * @return string
-     */
-    public static function from($object, array $config = null)
-    {
-        $parser = new BaseParser($config);
-        return $parser->parse($object)->json();
-    }
-
-    /**
-     * @param string $jsonString
-     * @return string
-     */
-    public static function fromJson($jsonString, array $config = null)
-    {
-        $parser = new BaseParser($config);
-        return $parser->parse(json_decode($jsonString))->json();
-    }
+  /**
+   * @param string $jsonString
+   * @param array|null $config
+   *
+   * @return string
+   * @throws \JSONSchemaGenerator\Parsers\Exceptions\UnmappableException
+   */
+  public static function fromJson(string $jsonString, array $config = null): string
+  {
+    return (new BaseParser($config))->parse(json_decode($jsonString))->json();
+  }
 
 }

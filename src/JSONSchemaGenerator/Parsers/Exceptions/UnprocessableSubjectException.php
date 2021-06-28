@@ -1,4 +1,5 @@
 <?php
+
 namespace JSONSchemaGenerator\Parsers\Exceptions;
 
 /**
@@ -7,8 +8,8 @@ namespace JSONSchemaGenerator\Parsers\Exceptions;
  */
 class UnprocessableSubjectException extends \RuntimeException
 {
-    public function __construct($message = "The provided subject could not be processed", $code = null, $previous = null)
-    {
-        parent::__construct($message, $code, $previous);
-    }
+  public function __construct($message = "The provided subject could not be processed", $code = null, $previous = null)
+  {
+    parent::__construct($message, $code, $previous);
+  }
 }

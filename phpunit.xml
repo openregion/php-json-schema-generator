@@ -3,29 +3,30 @@
          colors="true"
          processIsolation="false"
          stopOnFailure="false"
-         syntaxCheck="false"
          convertErrorsToExceptions="true"
          convertNoticesToExceptions="true"
-         convertWarningsToExceptions="true"
-         testSuiteLoaderClass="PHPUnit_Runner_StandardTestSuiteLoader">
+         convertWarningsToExceptions="true">
 
     <testsuites>
         <testsuite name="Test Suite">
             <directory>./tests/JSONSchemaGenerator</directory>
         </testsuite>
     </testsuites>
-    <filter>
-        <whitelist addUncoveredFilesFromWhitelist="true">
+    <coverage includeUncoveredFiles="true">
+        <include>
             <directory suffix=".php">./src/JSONSchemaGenerator</directory>
-            <exclude>
-                <directory>./vendor</directory>
-                <directory>./Tests</directory>
-            </exclude>
-        </whitelist>
-    </filter>
+        </include>
+        <exclude>
+            <directory>./vendor</directory>
+            <directory>./Tests</directory>
+        </exclude>
+        <report>
+            <clover outputFile="build/logs/clover.xml" />
+            <html outputDirectory="build/logs/html-coverage" />
+        </report>
+    </coverage>
     <logging>
-        <log type="coverage-clover" target="build/logs/clover.xml"/>
-        <log type="junit" target="build/artifacts/logs/junit.xml" logIncompleteSkipped="false" />
-        <log type="coverage-html" target="report" charset="UTF-8" />
+        <junit outputFile="build/artifacts/logs/junit.xml" />
+        <testdoxText outputFile="build/logs/testdox.txt"/>
     </logging>
 </phpunit>

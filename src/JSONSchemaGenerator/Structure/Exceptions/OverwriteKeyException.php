@@ -1,4 +1,5 @@
 <?php
+
 namespace JSONSchemaGenerator\Structure\Exceptions;
 
 /**
@@ -7,8 +8,8 @@ namespace JSONSchemaGenerator\Structure\Exceptions;
  */
 class OverwriteKeyException extends \RuntimeException
 {
-    public function __construct($message = "You are attempting to overwrite a key without forcing it to be. ", $code = null, $previous = null)
-    {
-        parent::__construct($message, $code, $previous);
-    }
+  public function __construct($message = "You are attempting to overwrite a key without forcing it to be. ", $code = null, $previous = null)
+  {
+    parent::__construct($message, $code, $previous);
+  }
 }

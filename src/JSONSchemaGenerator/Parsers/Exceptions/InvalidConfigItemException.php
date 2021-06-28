@@ -1,4 +1,5 @@
 <?php
+
 namespace JSONSchemaGenerator\Parsers\Exceptions;
 
 /**
@@ -7,8 +8,8 @@ namespace JSONSchemaGenerator\Parsers\Exceptions;
  */
 class InvalidConfigItemException extends \RuntimeException
 {
-    public function __construct($message = "The config item is invalid", $code = null, $previous = null)
-    {
-        parent::__construct($message, $code, $previous);
-    }
+  public function __construct($message = "The config item is invalid", $code = null, $previous = null)
+  {
+    parent::__construct($message, $code, $previous);
+  }
 }
