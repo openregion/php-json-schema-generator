@@ -1,6 +1,6 @@
 <?php
 
-namespace JSONSchemaGenerator\Structure\Exceptions;
+namespace JSONSchemaGenerator\Mappers\Exceptions;
 
 /**
  * @package JSONSchemaGenerator\Structure\Exceptions
