@@ -3,8 +3,9 @@
 ![Build Status](https://travis-ci.org/openregion/php-json-schema-generator.svg?branch=master#)
 [![codecov](https://codecov.io/gh/openregion/php-json-schema-generator/branch/master/graph/badge.svg)](https://codecov.io/gh/openregion/php-json-schema-generator)
 
-Originally forked from [solvire/php-json-schema-generator](https://github.com/solvire/php-json-schema-generator)
 Forked from [evaisse/php-json-schema-generator](https://github.com/evaisse/php-json-schema-generator)
+
+Originally forked from [solvire/php-json-schema-generator](https://github.com/solvire/php-json-schema-generator)
 
 Introduction to json schema below (and tools) :
 
@@ -21,11 +22,12 @@ To validate your structure against a given schema, you can use :
 ## Quickstart
 
 Install using composer
-
-    composer require openregion/php-json-schema-generator
+```bash
+composer require openregion/php-json-schema-generator
+```
 
 Most simple case
-
+```php
     $output = JSONSchemaGenerator\Generator::fromJson('{"a":{"b":2}');
 
     // $output ==> json string
@@ -45,9 +47,10 @@ Most simple case
     //   },
     //   "required": ["a"]
     // }
+```
 
 Default configuration values
-
+```php
     [
         'schema_id'                      => null,
         'properties_required_by_default' => true,
@@ -58,9 +61,11 @@ Default configuration values
         "items_schema_collect_mode"      => 0,
         'schema_required_field_names'    => []
     ]
+```
 
 Advanced usage
 
+```php
     $result = Generator::fromJson($this->addressJson1, [
         'schema_id' => 'http://foo.bar/schema'
     ]);
@@ -107,7 +112,7 @@ Advanced usage
                         {"id":"http:\/\/bar.foo\/schema2\/0",...},
                         {"id":"http:\/\/bar.foo\/schema2\/1",...}}
     */
-
+```
 
 For more advanced usage, see `tests/JSONSchemaGenerator/Tests/GeneratorTest.php`
 
@@ -117,12 +122,15 @@ For more advanced usage, see `tests/JSONSchemaGenerator/Tests/GeneratorTest.php`
 
 just run phpunit through
 
+```bash
     composer test
+```
 
 debug with
 
+```bash
     DEBUG=true composer test -- --filter="SearchWord" # for filtering *SearchWord* test case with output debugging
-
+```
 
 ## Roadmap
 
