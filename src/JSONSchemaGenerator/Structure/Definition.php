@@ -491,6 +491,7 @@ class Definition implements \JsonSerializable
   /**
    * @return \stdClass
    */
+  #[\ReturnTypeWillChange]
   public function jsonSerialize()
   {
     return $this->flatten();
