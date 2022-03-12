@@ -75,13 +75,13 @@ class StringMapper extends PropertyTypeMapper
         return self::validateFilter(
           $value,
           FILTER_VALIDATE_URL,
-          null
+          0
         );
       case 'email':
         return self::validateFilter(
           $value,
           FILTER_VALIDATE_EMAIL,
-          null
+          0
         );
       case 'ipv4':
         return self::validateFilter(
