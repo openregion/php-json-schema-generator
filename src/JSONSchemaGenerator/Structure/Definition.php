@@ -536,8 +536,10 @@ class Definition implements \JsonSerializable
    */
   public function __toString()
   {
-    return (string)json_encode($this);
+    if (!is_string($res = json_encode($this))) {
+      return 'null';
+    }
+
+    return $res;
   }
-
-
 }
