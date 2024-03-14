@@ -97,7 +97,7 @@ class PropertyTypeMapper
 
   public function getProperty()
   {
-    return $this->property();
+    return $this->property;
   }
 
   public function getPropertyType(): void

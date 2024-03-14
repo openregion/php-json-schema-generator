@@ -3,7 +3,7 @@
 namespace JSONSchemaGenerator\Mappers\Exceptions;
 
 /**
- * @package JSONSchemaGenerator\Structure\Exceptions
+ * @package JSONSchemaGenerator\Mappers\Exceptions
  * @author steven
  */
 class UnmappableException extends \InvalidArgumentException
