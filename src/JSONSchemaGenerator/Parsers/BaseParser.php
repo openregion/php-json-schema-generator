@@ -42,7 +42,7 @@ class BaseParser
   /**
    * @param array|null $config
    */
-  public function __construct(array $config = null)
+  public function __construct(?array $config = null)
   {
     $this->config = array_merge([
       'schema_id' => null,

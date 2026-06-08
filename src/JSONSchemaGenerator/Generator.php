@@ -26,7 +26,7 @@ abstract class Generator
    * @return string
    * @throws \JSONSchemaGenerator\Parsers\Exceptions\UnmappableException
    */
-  public static function from($object, array $config = null): string
+  public static function from($object, ?array $config = null): string
   {
     return (new BaseParser($config))->parse($object)->json();
   }
@@ -38,7 +38,7 @@ abstract class Generator
    * @return string
    * @throws \JSONSchemaGenerator\Parsers\Exceptions\UnmappableException
    */
-  public static function fromJson(string $jsonString, array $config = null): string
+  public static function fromJson(string $jsonString, ?array $config = null): string
   {
     return (new BaseParser($config))->parse(json_decode($jsonString))->json();
   }
